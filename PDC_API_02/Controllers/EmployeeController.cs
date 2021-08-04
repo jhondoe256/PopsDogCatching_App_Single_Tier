@@ -1,5 +1,5 @@
-﻿using PopsDogCatching_API.Models.DbContexts;
-using PopsDogCatching_API.Models.Employees;
+﻿using PDC_API_02.Models.DbContexts;
+using PDC_API_02.Models.Employees;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -9,44 +9,40 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace PopsDogCatching_API.Controllers
+namespace PDC_API_02.Controllers
 {
     public class EmployeeController : ApiController
     {
-        private readonly PopsDogCatchingDbContext _context = new PopsDogCatchingDbContext();
+         private readonly PDC_DbContext _context = new PDC_DbContext();
 
         [HttpPost]
         public async Task<IHttpActionResult> Post(Employee employee)
         {
-            if (!ModelState.IsValid || employee is null)
+            if (employee is null)
             {
                 return BadRequest();
             }
-
-            var route = await _context.Routes.FindAsync(employee.RouteID);
-            if (route != null)
+            if (!ModelState.IsValid)
             {
-                employee.Routes.Add(route);
-
-                route.EmployeeID = employee.ID;
-                route.Employees.Add(employee);
+                return BadRequest(ModelState);
             }
 
-            _context.Employees.Add(employee);
-            if (await _context.SaveChangesAsync()>0)
+             _context.Employees.Add(employee);
+
+            if (await _context.SaveChangesAsync() ==1)
             {
-                return Ok($"Employee: {employee.FullName} was Added to the database!");
+                return Ok($"{employee.FullName} was Added.");
             }
-            return InternalServerError();
+            else
+            {
+                return InternalServerError();
+            }
         }
         [HttpGet]
         public async Task<IHttpActionResult> Get()
         {
             var employees = await _context.Employees.ToListAsync();
-            foreach (var e in employees)
-            {
-                e.Routes.Add(await _context.Routes.FindAsync(e.RouteID));
-            }
+          
             return Ok(employees);
         }
         [HttpGet]

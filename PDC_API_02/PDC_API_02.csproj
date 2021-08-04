@@ -9,17 +9,17 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F7822EEB-1C50-4EE3-88D8-42461ABF8516}</ProjectGuid>
+    <ProjectGuid>{5FA5665A-4CAD-46FF-B270-705125E5731B}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PopsDogCatching_API</RootNamespace>
-    <AssemblyName>PopsDogCatching_API</AssemblyName>
+    <RootNamespace>PDC_API_02</RootNamespace>
+    <AssemblyName>PDC_API_02</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44370</IISExpressSSLPort>
+    <IISExpressSSLPort>44335</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -165,45 +165,22 @@
     <Compile Include="Controllers\BreedController.cs" />
     <Compile Include="Controllers\DogController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\EmployeeRouteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RouteController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107202325251_InitMigration.cs" />
-    <Compile Include="Migrations\202107202325251_InitMigration.designer.cs">
-      <DependentUpon>202107202325251_InitMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107202334044_AddedBreedToDog.cs" />
-    <Compile Include="Migrations\202107202334044_AddedBreedToDog.designer.cs">
-      <DependentUpon>202107202334044_AddedBreedToDog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107210848305_MadeDogTableHaveNullableBreedID.cs" />
-    <Compile Include="Migrations\202107210848305_MadeDogTableHaveNullableBreedID.designer.cs">
-      <DependentUpon>202107210848305_MadeDogTableHaveNullableBreedID.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108040948193_Added_Many_To_Many_Employee_Route.cs" />
-    <Compile Include="Migrations\202108040948193_Added_Many_To_Many_Employee_Route.designer.cs">
-      <DependentUpon>202108040948193_Added_Many_To_Many_Employee_Route.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108041022047_AddedRouteID_to_Employee_and_EmployeeID_to_Route.cs" />
-    <Compile Include="Migrations\202108041022047_AddedRouteID_to_Employee_and_EmployeeID_to_Route.designer.cs">
-      <DependentUpon>202108041022047_AddedRouteID_to_Employee_and_EmployeeID_to_Route.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108041026498_AddedRouteID_to_Employee_and_EmployeeID_to_Route_pt2.cs" />
-    <Compile Include="Migrations\202108041026498_AddedRouteID_to_Employee_and_EmployeeID_to_Route_pt2.designer.cs">
-      <DependentUpon>202108041026498_AddedRouteID_to_Employee_and_EmployeeID_to_Route_pt2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\DbContexts\PopsDogCatchingDbContext.cs" />
+    <Compile Include="Models\DbContexts\PDC_DbContext.cs" />
     <Compile Include="Models\Dogs\Breed.cs" />
     <Compile Include="Models\Dogs\Dog.cs" />
-    <Compile Include="Models\Dogs\ENUMs\DogInjurySeverityType.cs" />
-    <Compile Include="Models\Dogs\ENUMs\DogTempermentType.cs" />
+    <Compile Include="Models\Dogs\ENUMs\InjurySeverityType.cs" />
+    <Compile Include="Models\Dogs\ENUMs\TempermentType.cs" />
     <Compile Include="Models\Employees\Employee.cs" />
     <Compile Include="Models\Employees\ENUMs\PositionType.cs" />
-    <Compile Include="Models\Route.cs" />
-    <Compile Include="Models\Utilities\CsvReader.cs" />
+    <Compile Include="Models\Employee_Routes\Employee_Route.cs" />
+    <Compile Include="Models\Routes\Route.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -215,9 +192,6 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\Dogs\Stuff\fci-breeds\.gitignore" />
-    <Content Include="Models\Dogs\Stuff\fci-breeds\code\.gitignore" />
-    <Content Include="Models\Dogs\Stuff\fci-breeds\code\requirements.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -239,16 +213,6 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <Content Include="Models\Dogs\Stuff\fci-breeds\.editorconfig" />
-    <Content Include="Models\Dogs\Stuff\fci-breeds\code\crawler\core\crawler.py" />
-    <Content Include="Models\Dogs\Stuff\fci-breeds\code\crawler\core\__init__.py" />
-    <Content Include="Models\Dogs\Stuff\fci-breeds\code\crawler\crawl_fci.py" />
-    <Content Include="Models\Dogs\Stuff\fci-breeds\code\crawler\export_fci.py" />
-    <Content Include="Models\Dogs\Stuff\fci-breeds\code\README.md" />
-    <Content Include="Models\Dogs\Stuff\fci-breeds\fci-breeds.csv" />
-    <Content Include="Models\Dogs\Stuff\fci-breeds\fci-breeds_MODIFIED.csv" />
-    <Content Include="Models\Dogs\Stuff\fci-breeds\LICENSE" />
-    <Content Include="Models\Dogs\Stuff\fci-breeds\README.md" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -302,26 +266,6 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202107202325251_InitMigration.resx">
-      <DependentUpon>202107202325251_InitMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107202334044_AddedBreedToDog.resx">
-      <DependentUpon>202107202334044_AddedBreedToDog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107210848305_MadeDogTableHaveNullableBreedID.resx">
-      <DependentUpon>202107210848305_MadeDogTableHaveNullableBreedID.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108040948193_Added_Many_To_Many_Employee_Route.resx">
-      <DependentUpon>202108040948193_Added_Many_To_Many_Employee_Route.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108041022047_AddedRouteID_to_Employee_and_EmployeeID_to_Route.resx">
-      <DependentUpon>202108041022047_AddedRouteID_to_Employee_and_EmployeeID_to_Route.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108041026498_AddedRouteID_to_Employee_and_EmployeeID_to_Route_pt2.resx">
-      <DependentUpon>202108041026498_AddedRouteID_to_Employee_and_EmployeeID_to_Route_pt2.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -338,9 +282,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>49398</DevelopmentServerPort>
+          <DevelopmentServerPort>50772</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44370/</IISUrl>
+          <IISUrl>https://localhost:44335/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -16,5 +16,6 @@ namespace PopsDogCatching_API.Models.DbContexts
         public DbSet<Breed> Breeds { get; set; }
         public DbSet<Dog> Dogs { get; set; }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Route> Routes { get; set; }
     }
 }
