@@ -1,6 +1,6 @@
-﻿using PopsDogCatching_API.Models.DbContexts;
+﻿using PopsDogCatching_API.Models.Data_POCOs.Employees;
+using PopsDogCatching_API.Models.DbContexts;
 using PopsDogCatching_API.Models.EmployeeModels;
-using PopsDogCatching_API.Models.Employees;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

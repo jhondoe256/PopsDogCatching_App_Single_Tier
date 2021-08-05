@@ -1,5 +1,5 @@
-﻿using PopsDogCatching_API.Models.DbContexts;
-using PopsDogCatching_API.Models.Dogs;
+﻿using PopsDogCatching_API.Models.Data_POCOs.Dogs;
+using PopsDogCatching_API.Models.DbContexts;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

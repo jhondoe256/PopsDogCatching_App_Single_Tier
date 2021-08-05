@@ -174,16 +174,20 @@
     <Compile Include="Migrations\202108041754194_Init-Migration.designer.cs">
       <DependentUpon>202108041754194_Init-Migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108050130248_OverHaulB.cs" />
+    <Compile Include="Migrations\202108050130248_OverHaulB.designer.cs">
+      <DependentUpon>202108050130248_OverHaulB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Data_POCOs\Dogs\Breed.cs" />
+    <Compile Include="Models\Data_POCOs\Dogs\Dog.cs" />
+    <Compile Include="Models\Data_POCOs\Dogs\ENUMs\DogInjurySeverityType.cs" />
+    <Compile Include="Models\Data_POCOs\Dogs\ENUMs\DogTempermentType.cs" />
+    <Compile Include="Models\Data_POCOs\Employees\Employee.cs" />
+    <Compile Include="Models\Data_POCOs\Employees\ENUMs\PositionType.cs" />
+    <Compile Include="Models\Data_POCOs\Routes\Route.cs" />
     <Compile Include="Models\DbContexts\PopsDogCatchingDbContext.cs" />
-    <Compile Include="Models\Dogs\Breed.cs" />
-    <Compile Include="Models\Dogs\Dog.cs" />
-    <Compile Include="Models\Dogs\ENUMs\DogInjurySeverityType.cs" />
-    <Compile Include="Models\Dogs\ENUMs\DogTempermentType.cs" />
     <Compile Include="Models\EmployeeModels\EmployeeCreate.cs" />
-    <Compile Include="Models\Employees\Employee.cs" />
-    <Compile Include="Models\Employees\ENUMs\PositionType.cs" />
-    <Compile Include="Models\Route.cs" />
     <Compile Include="Models\RouteModels\RouteCreate.cs" />
     <Compile Include="Models\Utilities\CsvReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -197,9 +201,9 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\Dogs\Stuff\fci-breeds\.gitignore" />
-    <Content Include="Models\Dogs\Stuff\fci-breeds\code\.gitignore" />
-    <Content Include="Models\Dogs\Stuff\fci-breeds\code\requirements.txt" />
+    <Content Include="Models\Data_POCOs\Dogs\Stuff\fci-breeds\.gitignore" />
+    <Content Include="Models\Data_POCOs\Dogs\Stuff\fci-breeds\code\.gitignore" />
+    <Content Include="Models\Data_POCOs\Dogs\Stuff\fci-breeds\code\requirements.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -221,16 +225,16 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <Content Include="Models\Dogs\Stuff\fci-breeds\.editorconfig" />
-    <Content Include="Models\Dogs\Stuff\fci-breeds\code\crawler\core\crawler.py" />
-    <Content Include="Models\Dogs\Stuff\fci-breeds\code\crawler\core\__init__.py" />
-    <Content Include="Models\Dogs\Stuff\fci-breeds\code\crawler\crawl_fci.py" />
-    <Content Include="Models\Dogs\Stuff\fci-breeds\code\crawler\export_fci.py" />
-    <Content Include="Models\Dogs\Stuff\fci-breeds\code\README.md" />
-    <Content Include="Models\Dogs\Stuff\fci-breeds\fci-breeds.csv" />
-    <Content Include="Models\Dogs\Stuff\fci-breeds\fci-breeds_MODIFIED.csv" />
-    <Content Include="Models\Dogs\Stuff\fci-breeds\LICENSE" />
-    <Content Include="Models\Dogs\Stuff\fci-breeds\README.md" />
+    <Content Include="Models\Data_POCOs\Dogs\Stuff\fci-breeds\.editorconfig" />
+    <Content Include="Models\Data_POCOs\Dogs\Stuff\fci-breeds\code\crawler\core\crawler.py" />
+    <Content Include="Models\Data_POCOs\Dogs\Stuff\fci-breeds\code\crawler\core\__init__.py" />
+    <Content Include="Models\Data_POCOs\Dogs\Stuff\fci-breeds\code\crawler\crawl_fci.py" />
+    <Content Include="Models\Data_POCOs\Dogs\Stuff\fci-breeds\code\crawler\export_fci.py" />
+    <Content Include="Models\Data_POCOs\Dogs\Stuff\fci-breeds\code\README.md" />
+    <Content Include="Models\Data_POCOs\Dogs\Stuff\fci-breeds\fci-breeds.csv" />
+    <Content Include="Models\Data_POCOs\Dogs\Stuff\fci-breeds\fci-breeds_MODIFIED.csv" />
+    <Content Include="Models\Data_POCOs\Dogs\Stuff\fci-breeds\LICENSE" />
+    <Content Include="Models\Data_POCOs\Dogs\Stuff\fci-breeds\README.md" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -287,6 +291,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202108041754194_Init-Migration.resx">
       <DependentUpon>202108041754194_Init-Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108050130248_OverHaulB.resx">
+      <DependentUpon>202108050130248_OverHaulB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

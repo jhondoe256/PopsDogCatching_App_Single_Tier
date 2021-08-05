@@ -1,5 +1,6 @@
-﻿using PopsDogCatching_API.Models.Dogs;
-using PopsDogCatching_API.Models.Employees;
+﻿using PopsDogCatching_API.Models.Data_POCOs.Dogs;
+using PopsDogCatching_API.Models.Data_POCOs.Employees;
+using PopsDogCatching_API.Models.Data_POCOs.Routes;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

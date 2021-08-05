@@ -4,21 +4,21 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace PopsDogCatching_API.Models.Dogs
+namespace PopsDogCatching_API.Models.Data_POCOs.Dogs
 {
     public class Breed
     {
         [Key]
         public int ID { get; set; }
-        
+
         [Required]
         public string BreedName { get; set; }
-        
+
         public string Section { get; set; }
-       
+
         public string Country { get; set; }
 
-        public Breed(string breedName,string section, string country)
+        public Breed(string breedName, string section, string country)
         {
             BreedName = breedName;
             Section = section;

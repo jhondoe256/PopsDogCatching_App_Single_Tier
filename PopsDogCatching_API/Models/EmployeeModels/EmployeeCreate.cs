@@ -1,4 +1,4 @@
-﻿using PopsDogCatching_API.Models.Employees.ENUMs;
+﻿using PopsDogCatching_API.Models.Data_POCOs.Employees.ENUMs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

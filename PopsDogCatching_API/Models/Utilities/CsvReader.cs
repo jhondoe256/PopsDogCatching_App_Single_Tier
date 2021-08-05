@@ -1,4 +1,4 @@
-﻿using PopsDogCatching_API.Models.Dogs;
+﻿using PopsDogCatching_API.Models.Data_POCOs.Dogs;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,7 +15,7 @@ namespace PopsDogCatching_API.Models.Utilities
         //in properties menu choose take the full path file location and copy it 
         //and paste it below...(it should be different than mine...)
         private static string _csvFilePath=
-        @"D:\_MyElevenFiftyFiles\RestaurantRaterAPI_SingleTier\PopsDogCatching\PopsDogCatching_App\PopsDogCatching_API\Models\Dogs\Stuff\fci-breeds\fci-breeds_MODIFIED.csv";
+        @"D:\_MyElevenFiftyFiles\RestaurantRaterAPI_SingleTier\PopsDogCatching\PopsDogCatching_App\PopsDogCatching_API\Models\Data_POCOs\Dogs\Stuff\fci-breeds\fci-breeds_MODIFIED.csv";
 
         public static List<Breed> ReadAllBreeds()
         {
