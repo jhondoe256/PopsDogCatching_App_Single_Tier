@@ -1,5 +1,7 @@
 ﻿using PopsDogCatching_API.Models;
 using PopsDogCatching_API.Models.DbContexts;
+using PopsDogCatching_API.Models.Employees;
+using PopsDogCatching_API.Models.RouteModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -15,7 +17,7 @@ namespace PopsDogCatching_API.Controllers
         private readonly PopsDogCatchingDbContext _context = new PopsDogCatchingDbContext();
 
         [HttpPost]
-        public async Task<IHttpActionResult> Post(Route route)
+        public async Task<IHttpActionResult> Post(RouteCreate route)
         {
             if (route is null)
             {
@@ -26,17 +28,22 @@ namespace PopsDogCatching_API.Controllers
             {
                 return BadRequest(ModelState);
             }
-            
+
+            var entity = new Route
+            {
+                Address = route.Description,
+                Description =route.Description
+            };
+
             //look for an employee w/n the database that matches the employee id from the route variable
             var employee = await _context.Employees.FindAsync(route.EmployeeID);
 
             if (employee != null)
             {
-                route.Employees.Add(employee);
-                employee.Routes.Add(route);
+                entity.Employees.Add(employee);
             }
 
-            _context.Routes.Add(route);
+            _context.Routes.Add(entity);
 
             if (await _context.SaveChangesAsync() > 0)
             {
@@ -117,6 +124,29 @@ namespace PopsDogCatching_API.Controllers
             {
                 return InternalServerError();
             }
+        }
+
+        [HttpPost]
+        [Route("api/Route/AddEmployeeToRoute/{routeID:int}/{employeeId:int}")]
+        public async Task<IHttpActionResult> Post([FromUri]int routeID,[FromUri] int employeeId)
+        {
+            var employee = await _context.Employees.FindAsync(employeeId);
+            if (employee is null)
+            {
+                return NotFound();
+            }
+            var route = await _context.Routes.SingleOrDefaultAsync(r => r.ID == routeID);
+            if (route != null)
+            {
+                route.Employees.Add(employee);
+                employee.Routes.Add(route);
+                if (await _context.SaveChangesAsync()>0)
+                {
+                    return Ok($"{employee.FullName} was Added to route: {route.Description}");
+                }
+            }
+            return InternalServerError();
+
         }
     
     }

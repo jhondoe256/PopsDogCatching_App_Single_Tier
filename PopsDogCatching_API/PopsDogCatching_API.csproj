@@ -170,29 +170,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107202325251_InitMigration.cs" />
-    <Compile Include="Migrations\202107202325251_InitMigration.designer.cs">
-      <DependentUpon>202107202325251_InitMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107202334044_AddedBreedToDog.cs" />
-    <Compile Include="Migrations\202107202334044_AddedBreedToDog.designer.cs">
-      <DependentUpon>202107202334044_AddedBreedToDog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107210848305_MadeDogTableHaveNullableBreedID.cs" />
-    <Compile Include="Migrations\202107210848305_MadeDogTableHaveNullableBreedID.designer.cs">
-      <DependentUpon>202107210848305_MadeDogTableHaveNullableBreedID.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108040948193_Added_Many_To_Many_Employee_Route.cs" />
-    <Compile Include="Migrations\202108040948193_Added_Many_To_Many_Employee_Route.designer.cs">
-      <DependentUpon>202108040948193_Added_Many_To_Many_Employee_Route.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108041022047_AddedRouteID_to_Employee_and_EmployeeID_to_Route.cs" />
-    <Compile Include="Migrations\202108041022047_AddedRouteID_to_Employee_and_EmployeeID_to_Route.designer.cs">
-      <DependentUpon>202108041022047_AddedRouteID_to_Employee_and_EmployeeID_to_Route.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108041026498_AddedRouteID_to_Employee_and_EmployeeID_to_Route_pt2.cs" />
-    <Compile Include="Migrations\202108041026498_AddedRouteID_to_Employee_and_EmployeeID_to_Route_pt2.designer.cs">
-      <DependentUpon>202108041026498_AddedRouteID_to_Employee_and_EmployeeID_to_Route_pt2.cs</DependentUpon>
+    <Compile Include="Migrations\202108041754194_Init-Migration.cs" />
+    <Compile Include="Migrations\202108041754194_Init-Migration.designer.cs">
+      <DependentUpon>202108041754194_Init-Migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DbContexts\PopsDogCatchingDbContext.cs" />
@@ -200,9 +180,11 @@
     <Compile Include="Models\Dogs\Dog.cs" />
     <Compile Include="Models\Dogs\ENUMs\DogInjurySeverityType.cs" />
     <Compile Include="Models\Dogs\ENUMs\DogTempermentType.cs" />
+    <Compile Include="Models\EmployeeModels\EmployeeCreate.cs" />
     <Compile Include="Models\Employees\Employee.cs" />
     <Compile Include="Models\Employees\ENUMs\PositionType.cs" />
     <Compile Include="Models\Route.cs" />
+    <Compile Include="Models\RouteModels\RouteCreate.cs" />
     <Compile Include="Models\Utilities\CsvReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -303,23 +285,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202107202325251_InitMigration.resx">
-      <DependentUpon>202107202325251_InitMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107202334044_AddedBreedToDog.resx">
-      <DependentUpon>202107202334044_AddedBreedToDog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107210848305_MadeDogTableHaveNullableBreedID.resx">
-      <DependentUpon>202107210848305_MadeDogTableHaveNullableBreedID.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108040948193_Added_Many_To_Many_Employee_Route.resx">
-      <DependentUpon>202108040948193_Added_Many_To_Many_Employee_Route.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108041022047_AddedRouteID_to_Employee_and_EmployeeID_to_Route.resx">
-      <DependentUpon>202108041022047_AddedRouteID_to_Employee_and_EmployeeID_to_Route.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108041026498_AddedRouteID_to_Employee_and_EmployeeID_to_Route_pt2.resx">
-      <DependentUpon>202108041026498_AddedRouteID_to_Employee_and_EmployeeID_to_Route_pt2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202108041754194_Init-Migration.resx">
+      <DependentUpon>202108041754194_Init-Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

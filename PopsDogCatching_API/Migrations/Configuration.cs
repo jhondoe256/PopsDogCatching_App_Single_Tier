@@ -20,8 +20,8 @@
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
 
-            var listOfBreeds = CsvReader.ReadAllBreeds().OrderBy(b=>b.BreedName);
-           
+            var listOfBreeds = CsvReader.ReadAllBreeds().OrderBy(b => b.BreedName);
+
             context.Breeds.AddOrUpdate(b => b.BreedName, listOfBreeds.ToArray());
         }
     }

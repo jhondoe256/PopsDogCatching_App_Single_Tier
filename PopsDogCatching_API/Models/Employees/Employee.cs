@@ -29,7 +29,5 @@ namespace PopsDogCatching_API.Models.Employees
         }
 
         public virtual List<Route> Routes { get; set; } = new List<Route>();
-
-        public int? RouteID { get; set; }
     }
 }

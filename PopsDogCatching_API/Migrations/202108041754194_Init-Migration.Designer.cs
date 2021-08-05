@@ -7,13 +7,13 @@ namespace PopsDogCatching_API.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class AddedRouteID_to_Employee_and_EmployeeID_to_Route_pt2 : IMigrationMetadata
+    public sealed partial class InitMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedRouteID_to_Employee_and_EmployeeID_to_Route_pt2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202108041026498_AddedRouteID_to_Employee_and_EmployeeID_to_Route_pt2"; }
+            get { return "202108041754194_Init-Migration"; }
         }
         
         string IMigrationMetadata.Source

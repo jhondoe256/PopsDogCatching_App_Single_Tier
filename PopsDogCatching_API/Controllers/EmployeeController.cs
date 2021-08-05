@@ -1,4 +1,5 @@
 ﻿using PopsDogCatching_API.Models.DbContexts;
+using PopsDogCatching_API.Models.EmployeeModels;
 using PopsDogCatching_API.Models.Employees;
 using System;
 using System.Collections.Generic;
@@ -16,26 +17,31 @@ namespace PopsDogCatching_API.Controllers
         private readonly PopsDogCatchingDbContext _context = new PopsDogCatchingDbContext();
 
         [HttpPost]
-        public async Task<IHttpActionResult> Post(Employee employee)
+
+        public async Task<IHttpActionResult> Post(EmployeeCreate employee)
         {
             if (!ModelState.IsValid || employee is null)
             {
                 return BadRequest();
             }
 
+            var entity = new Employee
+            {
+                FirstName=employee.FirstName,
+                LastName=employee.LastName,
+                Position=employee.Position,
+            };
+
             var route = await _context.Routes.FindAsync(employee.RouteID);
             if (route != null)
             {
-                employee.Routes.Add(route);
-
-                route.EmployeeID = employee.ID;
-                route.Employees.Add(employee);
+                entity.Routes.Add(route);
             }
 
-            _context.Employees.Add(employee);
+            _context.Employees.Add(entity);
             if (await _context.SaveChangesAsync()>0)
             {
-                return Ok($"Employee: {employee.FullName} was Added to the database!");
+                return Ok($"Employee: {entity.FullName} was Added to the database!");
             }
             return InternalServerError();
         }
@@ -43,10 +49,6 @@ namespace PopsDogCatching_API.Controllers
         public async Task<IHttpActionResult> Get()
         {
             var employees = await _context.Employees.ToListAsync();
-            foreach (var e in employees)
-            {
-                e.Routes.Add(await _context.Routes.FindAsync(e.RouteID));
-            }
             return Ok(employees);
         }
         [HttpGet]
